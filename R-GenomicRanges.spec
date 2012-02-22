@@ -1,10 +1,10 @@
-%bcond_without bootstrap
+%bcond_with bootstrap
 %global packname  GenomicRanges
 %global rlibdir  %{_libdir}/R/library
 
 Name:             R-%{packname}
 Version:          1.6.7
-Release:          1
+Release:          2
 Summary:          Representation and manipulation of genomic intervals
 Group:            Sciences/Mathematics
 License:          Artistic-2.0
@@ -14,14 +14,20 @@ Requires:         R-methods R-IRanges
 %if %{with bootstrap}
 Requires:         R-RUnit
 %else
-Requires:         R-RUnit R-BSgenome R-GenomicFeatures R-Rsamtools R-EatonEtAlChIPseq R-leeBamViews R-edgeR R-DESeq R-rtracklayer R-org.Sc.sgd.db R-BSgenome.Scerevisiae.UCSC.sacCer2 R-DEXSeq R-pasilla 
+Requires:         R-RUnit R-BSgenome R-GenomicFeatures R-Rsamtools
+Requires:         R-EatonEtAlChIPseq R-leeBamViews R-edgeR R-DESeq
+Requires:         R-rtracklayer R-org.Sc.sgd.db
+Requires:         R-BSgenome.Scerevisiae.UCSC.sacCer2 R-DEXSeq R-pasilla 
 %endif
-BuildRequires:    R-devel Rmath-devel texlive-collection-latex R-methods R-IRanges
-BuildRequires:    R-methods R-IRanges 
+BuildRequires:    R-devel Rmath-devel texlive-collection-latex R-methods
+BuildRequires:    R-IRanges R-methods R-IRanges 
 %if %{with bootstrap}
 BuildRequires:    R-RUnit
 %else
-BuildRequires:    R-RUnit R-BSgenome R-GenomicFeatures R-Rsamtools R-EatonEtAlChIPseq R-leeBamViews R-edgeR R-DESeq R-rtracklayer R-org.Sc.sgd.db R-BSgenome.Scerevisiae.UCSC.sacCer2 R-DEXSeq R-pasilla 
+BuildRequires:    R-RUnit R-BSgenome R-GenomicFeatures R-Rsamtools
+BuildRequires:    R-EatonEtAlChIPseq R-leeBamViews R-edgeR R-DESeq
+BuildRequires:    R-rtracklayer R-org.Sc.sgd.db
+BuildRequires:    R-BSgenome.Scerevisiae.UCSC.sacCer2 R-DEXSeq R-pasilla 
 %endif
 
 %description
