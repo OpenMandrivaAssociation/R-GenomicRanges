@@ -1,3 +1,4 @@
+%bcond_with internet
 %bcond_with bootstrap
 %global packname  GenomicRanges
 %global rlibdir  %{_libdir}/R/library
@@ -49,8 +50,10 @@ test -d %{packname}/src && (cd %{packname}/src; rm -f *.o *.so)
 rm -f %{buildroot}%{rlibdir}/R.css
 
 %if %{without bootstrap}
+    %if %{with internet}
 %check
 %{_bindir}/R CMD check %{packname}
+    %endif
 %endif
 
 %files
