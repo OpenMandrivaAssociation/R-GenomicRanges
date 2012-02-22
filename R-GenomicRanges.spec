@@ -11,24 +11,20 @@ Group:            Sciences/Mathematics
 License:          Artistic-2.0
 URL:              http://bioconductor.org/packages/release/bioc/html/%{packname}.html
 Source0:          http://bioconductor.org/packages/release/bioc/src/contrib/%{packname}_%{version}.tar.gz
-Requires:         R-methods R-IRanges 
-%if %{with bootstrap}
-Requires:         R-RUnit
-%else
-Requires:         R-RUnit R-BSgenome R-GenomicFeatures R-Rsamtools
+Requires:         R-methods R-IRanges R-RUnit
+%if %{without bootstrap}
+Requires:         R-BSgenome R-GenomicFeatures R-Rsamtools
 Requires:         R-EatonEtAlChIPseq R-leeBamViews R-edgeR R-DESeq
-Requires:         R-rtracklayer R-org.Sc.sgd.db
-Requires:         R-BSgenome.Scerevisiae.UCSC.sacCer2 R-DEXSeq R-pasilla 
+Requires:         R-rtracklayer R-org.Sc.sgd.d
+Requires:         R-BSgenome.Scerevisiae.UCSC.sacCer2 R-DEXSeq R-pasilla
 %endif
-BuildRequires:    R-devel Rmath-devel texlive-collection-latex R-methods
-BuildRequires:    R-IRanges R-methods R-IRanges 
-%if %{with bootstrap}
-BuildRequires:    R-RUnit
-%else
-BuildRequires:    R-RUnit R-BSgenome R-GenomicFeatures R-Rsamtools
+BuildRequires:    R-devel Rmath-devel texlive-collection-latex
+BuildRequires:    R-methods R-IRanges R-RUnit
+%if %{without bootstrap}
+BuildRequires:    R-BSgenome R-GenomicFeatures R-Rsamtools
 BuildRequires:    R-EatonEtAlChIPseq R-leeBamViews R-edgeR R-DESeq
 BuildRequires:    R-rtracklayer R-org.Sc.sgd.db
-BuildRequires:    R-BSgenome.Scerevisiae.UCSC.sacCer2 R-DEXSeq R-pasilla 
+BuildRequires:    R-BSgenome.Scerevisiae.UCSC.sacCer2 R-DEXSeq R-pasilla
 %endif
 
 %description
