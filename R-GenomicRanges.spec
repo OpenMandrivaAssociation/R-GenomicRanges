@@ -5,7 +5,7 @@
 
 Name:             R-%{packname}
 Version:          1.6.7
-Release:          2
+Release:          3
 Summary:          Representation and manipulation of genomic intervals
 Group:            Sciences/Mathematics
 License:          Artistic-2.0
