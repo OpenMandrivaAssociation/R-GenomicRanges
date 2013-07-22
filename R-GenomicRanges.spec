@@ -4,13 +4,13 @@
 %global rlibdir  %{_libdir}/R/library
 
 Name:             R-%{packname}
-Version:          1.10.6
+Version:          1.12.4
 Release:          1
 Summary:          Representation and manipulation of genomic intervals
 Group:            Sciences/Mathematics
 License:          Artistic-2.0
 URL:              http://bioconductor.org/packages/release/bioc/html/%{packname}.html
-Source0:          http://bioconductor.org/packages/release/bioc/src/contrib/GenomicRanges_1.10.6.tar.gz
+Source0:          http://bioconductor.org/packages/release/bioc/src/contrib/GenomicRanges_1.12.4.tar.gz
 Requires:         R-methods R-IRanges 
 %if %{with bootstrap}
 Requires:         R-RUnit
